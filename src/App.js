@@ -1,5 +1,6 @@
 import React from 'react';
 //pages
+import './App.css'
 import Home from "./pages/Home";
 import Rooms from "./pages/Rooms";
 import SingleRoom from "./pages/SingleRoom";
