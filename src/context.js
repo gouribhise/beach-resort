@@ -61,11 +61,12 @@ this.setState({
 },this.filterRooms);
 }
 filterRooms=()=>{
-  let {rooms,type,capacity,minPrice,maxPrice,minSize,maxSize,breakfast,pets}=this.state;
+  let {rooms,type,capacity,price,minPrice,maxPrice,minSize,maxSize,breakfast,pets}=this.state;
 // all the rooms
  let tempRooms=[...rooms];
  //transform  value
  capacity=parseInt(capacity)
+ price=parseInt(price)
  //filter by type
  if(type!=='all'){
    tempRooms=tempRooms.filter(room=>room.type===type);
@@ -76,7 +77,13 @@ filterRooms=()=>{
    tempRooms=tempRooms.filter(room=>room.capacity>=capacity);
 
  }
+ //filter by price
+
+   tempRooms=tempRooms.filter(room=>room.price<=price);
+
+
  console.log(tempRooms)
+ //change state
  this.setState({
    sortedRooms:tempRooms
  })
